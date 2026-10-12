@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ห้องทดลองปฏิกิริยาเคมี | ม.3</title>
+<style>
+:root{--ink:#172b4d;--muted:#5b6b82;--bg:#f3f7fb;--card:#fff;--blue:#2563eb;--teal:#0f9f91;--line:#dce5ef;--orange:#f59e0b}
+*{box-sizing:border-box}body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Tahoma,sans-serif;background:var(--bg);color:var(--ink);line-height:1.55}
+header{background:linear-gradient(120deg,#12315b,#176b87);color:white;padding:24px 18px 28px}header .wrap,main{max-width:1100px;margin:auto}header h1{margin:0 0 6px;font-size:clamp(1.45rem,4vw,2.2rem)}header p{margin:0;color:#e1f3ff}
+main{padding:18px;display:grid;gap:16px}.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:18px;box-shadow:0 6px 20px #183a5b0a}
+h2{font-size:1.18rem;margin:0 0 12px}h3{font-size:1rem;margin:0 0 8px}.small{font-size:.91rem;color:var(--muted)}
+.reactions{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:9px}.reaction{border:1px solid var(--line);background:#f8fbff;border-radius:12px;padding:12px 8px;text-align:center;cursor:pointer;font:inherit;color:var(--ink);min-height:76px}.reaction span{display:block;font-size:1.55rem}.reaction.active{border:2px solid var(--blue);background:#eaf1ff}
+.layout{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:16px}.control{padding:12px 0;border-bottom:1px solid var(--line)}.control:last-child{border:0}.control label{display:flex;justify-content:space-between;gap:10px;font-weight:650}.control input{width:100%;margin-top:12px;accent-color:var(--blue)}.pill{display:inline-block;padding:3px 9px;border-radius:99px;background:#e8f7f4;color:#087f72;font-size:.8rem;font-weight:700}
+.lab{min-height:280px;background:radial-gradient(circle at 50% 20%,#e7f7ff,#f6fbff 62%,#edf4fa);border:1px solid var(--line);border-radius:14px;position:relative;overflow:hidden;padding:14px;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.equation{font-weight:750;text-align:center;font-size:clamp(.92rem,2.5vw,1.15rem);margin:8px 0 12px}.beaker{height:145px;width:150px;border:5px solid #7794a9;border-top:0;border-radius:0 0 25px 25px;position:relative;overflow:hidden;background:#ffffffa8}.liquid{position:absolute;bottom:0;left:0;right:0;height:58%;background:#64c9d6a8;transition:height .25s,background .25s}.bubble{position:absolute;bottom:12px;width:10px;height:10px;border:2px solid #fff;background:#b9f3ffb0;border-radius:50%;animation:rise 2.2s infinite ease-in}.bubble:nth-child(2){left:27%;animation-delay:.4s}.bubble:nth-child(3){left:53%;animation-delay:1s}.bubble:nth-child(4){left:72%;animation-delay:.8s}@keyframes rise{0%{transform:translateY(0) scale(.6);opacity:0}20%{opacity:1}100%{transform:translateY(-115px) scale(1.15);opacity:0}}
+.flame{font-size:4rem;animation:flicker .45s infinite alternate;filter:drop-shadow(0 0 12px #ff9d42)}@keyframes flicker{from{transform:scale(.94) rotate(-3deg)}to{transform:scale(1.06) rotate(3deg)}}.iron{font-size:4rem}.rust{color:#b85e2c;text-shadow:2px 2px #e8b18a}.gas{margin-top:12px;padding:9px 12px;border-radius:10px;background:#e7f7f4;text-align:center;width:100%;font-size:.93rem}.result{margin-top:12px;padding:12px;border-radius:12px;background:#f7f9fc;border:1px solid var(--line)}.result strong{color:#0b7c72}.btn{border:0;background:var(--blue);color:white;border-radius:10px;padding:11px 15px;font:inherit;font-weight:700;cursor:pointer}.btn.secondary{background:#e8eef7;color:var(--ink)}.btnrow{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}.quizq{padding:14px 0;border-bottom:1px solid var(--line)}.quizq:last-child{border:0}.quizq p{margin:0 0 8px;font-weight:650}.quizq label{display:block;margin:6px 0;font-weight:400;cursor:pointer}.feedback{margin-top:12px;font-weight:700}.footer{text-align:center;color:var(--muted);font-size:.82rem;padding:4px 0 18px}
+@media(max-width:760px){.layout{grid-template-columns:1fr}.reactions{grid-template-columns:repeat(2,minmax(0,1fr))}main{padding:12px}.card{padding:15px}.lab{min-height:255px}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition:none!important}}
+</style>
+</head>
+<body>
+<header><div class="wrap"><h1>🧪 ห้องทดลองปฏิกิริยาเคมี</h1><p>วิทยาศาสตร์ ม.3 · สำรวจสารตั้งต้น สังเกตหลักฐาน และอธิบายการเปลี่ยนแปลง</p></div></header>
+<main>
+<section class="card"><h2>🎯 วัตถุประสงค์การเรียนรู้</h2><ul><li>ทดลองจำลองและสังเกตการเปลี่ยนแปลงเมื่อสารทำปฏิกิริยากัน</li><li>วิเคราะห์หลักฐาน เช่น การเกิดก๊าซ การเปลี่ยนสี และการเกิดสารใหม่</li><li>เชื่อมโยงผลการสังเกตกับสมการคำอธิบายของปฏิกิริยาเคมี</li></ul><p class="small">หมายเหตุ: เป็นแบบจำลองเพื่อการเรียนรู้ ไม่ใช่การทดลองจริง ปริมาณบนแถบเลื่อนเป็นค่าจำลอง ไม่ใช่สัดส่วนเชิงปริมาณที่ใช้ในห้องปฏิบัติการ</p></section>
+<section class="card"><h2>1. เลือกปฏิกิริยาเคมี</h2><div class="reactions" role="group" aria-label="เลือกปฏิกิริยา">
+<button class="reaction active" data-kind="burn"><span>🔥</span>การเผาไหม้</button><button class="reaction" data-kind="rust"><span>🔩</span>การเกิดสนิมเหล็ก</button><button class="reaction" data-kind="acidbase"><span>🧪</span>กรด + เบส</button><button class="reaction" data-kind="acidmetal"><span>⚗️</span>กรด + โลหะ</button>
+</div></section>
+<div class="layout">
+<section class="card"><h2>2. ปรับตัวแปรสารตั้งต้น</h2><p class="small" id="controlHint">เลื่อนเพื่อเปลี่ยนปริมาณเชื้อเพลิงและออกซิเจนในแบบจำลอง</p>
+<div class="control"><label for="s1"><span id="s1name">สารตั้งต้น 1 · เชื้อเพลิง</span><output id="v1">60%</output></label><input id="s1" type="range" min="0" max="100" value="60"></div>
+<div class="control"><label for="s2"><span id="s2name">สารตั้งต้น 2 · ออกซิเจน</span><output id="v2">70%</output></label><input id="s2" type="range" min="0" max="100" value="70"></div>
+<div class="btnrow"><button class="btn" id="run">▶ จำลองปฏิกิริยา</button><button class="btn secondary" id="reset">คืนค่าเริ่มต้น</button></div>
+<div class="result" aria-live="polite"><strong>ผลการวิเคราะห์</strong><p id="analysis" style="margin-bottom:0">เมื่อมีเชื้อเพลิงและออกซิเจนเพียงพอ การเผาไหม้สมบูรณ์ของเชื้อเพลิงไฮโดรคาร์บอนให้คาร์บอนไดออกไซด์และน้ำ</p></div>
+</section>
+<section class="card"><h2>3. สังเกตแบบจำลองแบบเรียลไทม์</h2><div class="lab"><div class="equation" id="equation">เชื้อเพลิง + O₂ → CO₂ + H₂O</div><div id="visual"><div class="flame">🔥</div></div><div class="gas" id="gas">ก๊าซที่เกิด: คาร์บอนไดออกไซด์ (CO₂) และไอน้ำ (H₂O)</div></div><p class="small" id="observation" style="margin-bottom:0">หลักฐาน: เกิดความร้อนและแสง พร้อมผลิตภัณฑ์ใหม่</p></section>
+</div>
+<section class="card"><h2>4. คำถามท้ายกิจกรรม (5 ข้อ)</h2><p class="small">เลือกคำตอบที่ถูกที่สุด แล้วกด “ตรวจคำตอบ” เพื่อดูคะแนนและเฉลย</p><form id="quiz">
+<div class="quizq"><p>ข้อ 1 การเผาไหม้สมบูรณ์ของเชื้อเพลิงไฮโดรคาร์บอนต้องใช้อะไร?</p><label><input type="radio" name="q1" value="a"> ก. ออกซิเจน</label><label><input type="radio" name="q1" value="b"> ข. ฮีเลียม</label><label><input type="radio" name="q1" value="c"> ค. ไนโตรเจนเพียงอย่างเดียว</label><div class="small" id="f1"></div></div>
+<div class="quizq"><p>ข้อ 2 การเกิดสนิมเหล็กโดยทั่วไปต้องอาศัยสิ่งใดร่วมกัน?</p><label><input type="radio" name="q2" value="a"> ก. น้ำมันและแสง</label><label><input type="radio" name="q2" value="b"> ข. น้ำและออกซิเจน</label><label><input type="radio" name="q2" value="c"> ค. เกลือแกงเท่านั้น</label><div class="small" id="f2"></div></div>
+<div class="quizq"><p>ข้อ 3 เมื่อกรดทำปฏิกิริยากับเบส โดยทั่วไปจะเกิดผลิตภัณฑ์ใด?</p><label><input type="radio" name="q3" value="a"> ก. เกลือและน้ำ</label><label><input type="radio" name="q3" value="b"> ข. โลหะและออกซิเจน</label><label><input type="radio" name="q3" value="c"> ค. เหล็กและสนิม</label><div class="small" id="f3"></div></div>
+<div class="quizq"><p>ข้อ 4 กรดไฮโดรคลอริกทำปฏิกิริยากับสังกะสี จะเกิดก๊าซใด?</p><label><input type="radio" name="q4" value="a"> ก. คาร์บอนไดออกไซด์</label><label><input type="radio" name="q4" value="b"> ข. ออกซิเจน</label><label><input type="radio" name="q4" value="c"> ค. ไฮโดรเจน</label><div class="small" id="f4"></div></div>
+<div class="quizq"><p>ข้อ 5 ข้อใดเป็นหลักฐานที่อาจบ่งชี้ว่าเกิดปฏิกิริยาเคมี?</p><label><input type="radio" name="q5" value="a"> ก. เปลี่ยนรูปร่างจากการตัดเพียงอย่างเดียว</label><label><input type="radio" name="q5" value="b"> ข. เกิดก๊าซหรือมีสารใหม่เกิดขึ้น</label><label><input type="radio" name="q5" value="c"> ค. ย้ายวัตถุไปอีกโต๊ะ</label><div class="small" id="f5"></div></div>
+<div class="btnrow"><button class="btn" type="submit">ตรวจคำตอบ</button><button class="btn secondary" type="button" id="showAnswers">แสดงเฉลยทั้งหมด</button></div><p class="feedback" id="score" aria-live="polite"></p>
+</form></section>
+<section class="card"><h2>💡 สรุปสิ่งที่ค้นพบ</h2><p>ปฏิกิริยาเคมีทำให้สารตั้งต้นเปลี่ยนเป็นสารผลิตภัณฑ์ชนิดใหม่ สังเกตได้จากหลักฐานหลายอย่าง เช่น การเกิดก๊าซ การเปลี่ยนสี การเกิดตะกอน หรือการเปลี่ยนแปลงพลังงาน ทั้งนี้ควรใช้หลักฐานร่วมกัน ไม่สรุปจากสัญญาณเพียงอย่างเดียว</p><p class="small">ความปลอดภัย: กิจกรรมนี้เป็นการจำลองบนหน้าจอ ห้ามนำสารเคมีมาผสมหรือจุดไฟตามแบบจำลองโดยไม่มีครูควบคุมและอุปกรณ์ความปลอดภัยที่เหมาะสม</p></section>
+<div class="footer">สื่อการเรียนรู้แบบไฟล์เดียว · ใช้งานได้ทั้งคอมพิวเตอร์และโทรศัพท์ · ไม่ต้องเชื่อมต่ออินเทอร์เน็ต</div>
+</main>
+<script>
+const configs={
+ burn:{names:['สารตั้งต้น 1 · เชื้อเพลิง','สารตั้งต้น 2 · ออกซิเจน'],hint:'เลื่อนเพื่อเปลี่ยนปริมาณเชื้อเพลิงและออกซิเจนในแบบจำลอง',eq:'เชื้อเพลิง + O₂ → CO₂ + H₂O',gas:'ก๊าซที่เกิด: คาร์บอนไดออกไซด์ (CO₂) และไอน้ำ (H₂O)',obs:'หลักฐาน: เกิดความร้อนและแสง พร้อมผลิตภัณฑ์ใหม่'},
+ rust:{names:['สารตั้งต้น 1 · เหล็ก','สารตั้งต้น 2 · น้ำ/ออกซิเจน'],hint:'เลื่อนเพื่อเปลี่ยนความพร้อมของเหล็กและความชื้น/ออกซิเจน',eq:'เหล็ก + O₂ + H₂O → สนิมเหล็ก',gas:'ก๊าซที่เกิด: โดยทั่วไปไม่มีแก๊สเด่นชัดจากการเกิดสนิม',obs:'หลักฐาน: เหล็กค่อย ๆ เปลี่ยนเป็นสีน้ำตาลแดงเมื่อเกิดสนิม'},
+ acidbase:{names:['สารตั้งต้น 1 · กรด','สารตั้งต้น 2 · เบส'],hint:'เลื่อนเพื่อเปลี่ยนปริมาณกรดและเบสในแบบจำลองการเป็นกลาง',eq:'กรด + เบส → เกลือ + น้ำ',gas:'ก๊าซที่เกิด: โดยทั่วไปไม่มี หากเป็นปฏิกิริยาการเป็นกลางทั่วไป',obs:'หลักฐาน: ค่า pH เปลี่ยน และอาจมีอุณหภูมิเปลี่ยนแปลง'},
+ acidmetal:{names:['สารตั้งต้น 1 · กรด','สารตั้งต้น 2 · โลหะ'],hint:'เลื่อนเพื่อเปลี่ยนปริมาณกรดและโลหะในแบบจำลอง',eq:'กรด + โลหะบางชนิด → เกลือ + H₂↑',gas:'ก๊าซที่เกิด: ไฮโดรเจน (H₂) เมื่อกรดทำปฏิกิริยากับโลหะที่เหมาะสม',obs:'หลักฐาน: มีฟองก๊าซไฮโดรเจนและโลหะบางส่วนค่อย ๆ ละลาย'}
+};
+let kind='burn';
+const $=id=>document.getElementById(id);
+function render(){
+ const a=+$('s1').value,b=+$('s2').value,c=configs[kind];
+ $('v1').textContent=a+'%';$('v2').textContent=b+'%';
+ $('s1name').textContent=c.names[0];$('s2name').textContent=c.names[1];$('controlHint').textContent=c.hint;
+ $('equation').textContent=c.eq;$('gas').textContent=c.gas;$('observation').textContent=c.obs;
+ let visual='',analysis='';
+ if(kind==='burn'){
+   const active=Math.min(a,b);
+   visual=active===0?'<div style="font-size:3rem">🕯️</div>':'<div class="flame" style="opacity:'+(0.25+active/130)+'">🔥</div>';
+   analysis=active===0?'สารตั้งต้นอย่างน้อยหนึ่งชนิดไม่มีในแบบจำลอง จึงไม่แสดงการเผาไหม้':(a<=b?'เชื้อเพลิงเป็นปัจจัยจำกัดในแบบจำลอง':'ออกซิเจนเป็นปัจจัยจำกัดในแบบจำลอง')+'. เมื่อมีออกซิเจนเพียงพอ การเผาไหม้สมบูรณ์ให้ CO₂ และ H₂O';
+ } else if(kind==='rust'){
+   visual='<div class="iron '+(a>0&&b>0?'rust':'')+'">🔩</div><div class="small">'+(a>0&&b>0?'พื้นผิวมีแนวโน้มเกิดสีสนิมในแบบจำลอง':'ต้องมีเหล็ก น้ำ และออกซิเจนจึงเกิดสนิมได้')+'</div>';
+   analysis=a===0||b===0?'ถ้าขาดเหล็กหรือความชื้น/ออกซิเจน การเกิดสนิมจะไม่เกิดหรือช้าลง':'เมื่อเหล็กสัมผัสน้ำและออกซิเจน สนิมเกิดได้ช้า ๆ; ความชื้นและเกลืออาจเร่งกระบวนการ';
+ } else if(kind==='acidbase'){
+   const diff=Math.abs(a-b);
+   visual='<div style="font-size:3.2rem">'+(diff<10?'🟢':a>b?'🟠':'🔵')+'</div><div class="small">ค่าจำลองความสมดุล: '+(100-diff)+'%</div>';
+   analysis=diff<10?'ปริมาณกรดและเบสใกล้เคียงกันในแบบจำลอง: อาจใกล้จุดเป็นกลาง ทั้งนี้ pH จริงขึ้นกับชนิดและความเข้มข้นของสาร':'สารชนิดหนึ่งมีปริมาณมากกว่าในแบบจำลอง จึงอาจเหลือกรดหรือเบสหลังปฏิกิริยา';
+ } else {
+   visual='<div class="beaker"><div class="liquid" style="height:'+(20+Math.min(a,b)*.55)+'%;background:#75cbd0a8"></div>'+(a>0&&b>0?'<i class="bubble" style="left:15%"></i><i class="bubble" style="left:42%;animation-delay:.8s"></i><i class="bubble" style="left:68%;animation-delay:1.2s"></i>':'')+'</div>';
+   analysis=a===0||b===0?'เมื่อสารตั้งต้นชนิดใดชนิดหนึ่งไม่มีในแบบจำลอง จะไม่แสดงการเกิดก๊าซ':'แบบจำลองแสดงฟองก๊าซไฮโดรเจนเมื่อกรดและโลหะที่ทำปฏิกิริยาได้มีอยู่จริง ปริมาณก๊าซจริงขึ้นกับชนิดสารและความเข้มข้น';
+ }
+ $('visual').innerHTML=visual;$('analysis').textContent=analysis;
+}
+document.querySelectorAll('.reaction').forEach(btn=>btn.addEventListener('click',()=>{kind=btn.dataset.kind;document.querySelectorAll('.reaction').forEach(x=>x.classList.toggle('active',x===btn));render()}));
+$('s1').addEventListener('input',render);$('s2').addEventListener('input',render);$('run').addEventListener('click',()=>{render();$('analysis').textContent+=' (อัปเดตตามค่าตัวแปรล่าสุดแล้ว)';});
+$('reset').addEventListener('click',()=>{$('s1').value=60;$('s2').value=70;render()});
+const answers={q1:{v:'a',t:'คำตอบ ก. ออกซิเจน — การเผาไหม้ต้องมีเชื้อเพลิงและตัวออกซิไดซ์ เช่น O₂'},q2:{v:'b',t:'คำตอบ ข. น้ำและออกซิเจน — ทั้งสองช่วยให้เหล็กเกิดสนิมได้'},q3:{v:'a',t:'คำตอบ ก. เกลือและน้ำ — เป็นผลิตภัณฑ์ทั่วไปของปฏิกิริยาการเป็นกลาง'},q4:{v:'c',t:'คำตอบ ค. ไฮโดรเจน — กรดกับโลหะบางชนิดให้เกลือและ H₂'},q5:{v:'b',t:'คำตอบ ข. เกิดก๊าซหรือมีสารใหม่ — ควรพิจารณาหลักฐานหลายอย่างประกอบกัน'}};
+$('quiz').addEventListener('submit',e=>{e.preventDefault();let n=0;Object.entries(answers).forEach(([q,o],i)=>{const chosen=document.querySelector('input[name="'+q+'"]:checked');const f=$('f'+(i+1));if(chosen&&chosen.value===o.v){n++;f.textContent='✓ ถูกต้อง · '+o.t;f.style.color='#087f72'}else{f.textContent='✗ '+o.t;f.style.color='#b45309'}});$('score').textContent='คะแนนของคุณ: '+n+'/5 ข้อ';});
+$('showAnswers').addEventListener('click',()=>{Object.entries(answers).forEach(([q,o],i)=>{$('f'+(i+1)).textContent=o.t;$('f'+(i+1)).style.color='#087f72'});});
+render();
+</script>
+</body>
+</html>
